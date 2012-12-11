@@ -53,7 +53,6 @@
 	// Initial variables
 	var searchForm = document.getElementById("search-form"),
 		searchField = document.getElementById("q"),
-		getAllButton = document.getElementById("get-all"),
 		target = document.getElementById("output");
 	
 	// Object with address book methods
@@ -86,7 +85,7 @@
 						isItFound = obj.name.indexOf(searchValue);
 
 					if(isItFound !== -1) {
-						target.innerHTML += '<p>'+obj.name+', <a href="mailto:'+obj.email+'">'+obj.email+'</a></p>';
+						target.innerHTML += '<p><a href="mailto:'+obj.email+'">'+obj.name+'</a></p>';
 					}
 				}
 			} // End if
@@ -118,37 +117,13 @@
 			
 		}); //End Ajax call
 		
-	},
-	
-	// Change class of parent node to "active"
-	addActiveSection : function(){
-		this.parentNode.setAttribute("class","active");
-	},
-	
-	// Remove classes of parent node
-	removeActiveSection: function(){
-		this.parentNode.removeAttribute("class");
-	},
-	
-	// Change class to "hover"
-	addHoverClass : function(){
-		searchForm.setAttribute("class","hovering");	
-	},
-	
-	// Remove classes
-	removeHoverClass: function() {
-		searchForm.removeAttribute("class");
-	},
+	}
 	
 };
 
 	// Event listeners
 	searchField.addEventListener("keyup", addr.search, false);
-	searchField.addEventListener("focus", addr.addActiveSection, false);
-	searchField.addEventListener("blur", addr.removeActiveSection, false);
-	getAllButton.addEventListener("click", addr.getAllContacts, false);
-	searchForm.addEventListener("mouseover", addr.addHoverClass, false);
-	searchForm.addEventListener("mouseout", addr.removeHoverClass, false);
-	searchForm.addEventListener("submit", addr.search, false);
+	
+	//getAllButton.addEventListener("click", addr.getAllContacts, false);
 	
 })(); // End anonymous function
