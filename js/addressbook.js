@@ -17,15 +17,17 @@ $(document).ready(function () {
 			
 			if (count > 0 && searchValue !== "") {
 				
-				$.each(addrBook, function (i,obj) {
+				$.map(addrBook, function(obj,i) {
+				
 					var isItFound = obj.name.indexOf(searchValue);
+
 					if(isItFound !== -1) {
 						
 						output.append('<p>' + '<a href="mailto:' + obj.email + '">' + obj.name + '</a></p>');
 						 
 					}
 					
-				}); // End each
+				}); // End map
 				
 			} // End count
 		
