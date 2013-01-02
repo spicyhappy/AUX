@@ -1,129 +1,39 @@
-// Wrap everything in an anonymous function,
-(function() {
-
-	// Detect if XMLHttpRequest is supported, if not use ActiveXObject
-	function getHTTPObject() {
-
-	var xhr;
+$(document).ready(function () {
 	
-	if (window.XMLHttpRequest) {
-		xhr = new XMLHttpRequest();
-	}
+	var output = $('#output');
 	
-	else if (window.ActiveXObject) {
-		xhr = new ActiveXObject("Msxml2.XMLHTTP");
-	}
-	
-	return xhr;
-
-}
-
-	// Define Ajax call
-	function ajaxCall(dataUrl, outputElement, callback) {
-	
-	// Feature detection
-	var request = getHTTPObject();
-	
-	outputElement.innerHTML = "Loading...";
-	
-	request.onreadystatechange = function() {
-		
-		// Detects if Ajax request is ready and that it was successful
-		if (request.readyState === 4 && request.status === 200) {
-			
-			// Parse Ajax response and save to a variable
-			var contacts = JSON.parse(request.responseText);
-			
-			// Check to see if call back is a function, run
-			if(typeof callback === "function"){
-				
-				callback(contacts);
-			}
-		
-		}
-	};
-	
-	// Prepare information
-	request.open("GET", dataUrl, true);
-	
-	// Make Ajax call
-	request.send(null);
-}
-
-	// Initial variables
-	var searchForm = document.getElementById("search-form"),
-		searchField = document.getElementById("q"),
-		target = document.getElementById("output");
-	
-	// Object with address book methods
+	// Address book methods
 	var addr = {
 	
 	search : function(event){
 		
-		var output = document.getElementById("output");
+		$.getJSON('data/contacts.json', function(data) {
 		
-		// Start Ajax call
-		ajaxCall("data/contacts.json", output, function (data) {
-			
-			var searchValue = searchField.value,
+			var searchValue = $("#q").val(),
 				addrBook = data.addressBook,
-				count = addrBook.length,
-				i;
+				count = addrBook.length;
 				
-			// Prevent default browser behavior
-			event.preventDefault();
+			output.empty();
 			
-			target.innerHTML = "";
-			
-			// Check to see if there are entries and a search value
 			if (count > 0 && searchValue !== "") {
 				
-				// Loop through contacts in the address book, check to see if it matches the search value
-				for (i=0; i<count; i++) {
-					var obj = addrBook[i],
-						//indexOf returns -1 if there are no matching terms
-						isItFound = obj.name.indexOf(searchValue);
-
+				$.each(addrBook, function (i,obj) {
+					var isItFound = obj.name.indexOf(searchValue);
 					if(isItFound !== -1) {
-						target.innerHTML += '<p><a href="mailto:'+obj.email+'">'+obj.name+'</a></p>';
+						
+						output.append('<p>' + '<a href="mailto:' + obj.email + '">' + obj.name + '</a></p>');
+						
 					}
-				}
-			} // End if
-		
-		}); // End Ajax call
-		
-	},
-	
-	// List all contacts in address book
-	getAllContacts : function(){
-		
-		var output = document.getElementById("output");
-		
-		ajaxCall("data/contacts.json", output, function (data) {
-			
-			var addrBook = data.addressBook,
-				count = addrBook.length,
-				i;
+					
+				}); // End each
 				
-			target.innerHTML = "";
-			
-			if(count > 0) {
-				for(i=0; i<count; i++) {
-					var obj = addrBook[i];
-					target.innerHTML += '<p>'+obj.name+', <a href="mailto:'+obj.email+'">'+obj.email+'</a></p>';
-				}
-			} //end count
+			} // End count
 		
-			
-		}); //End Ajax call
+		}); // End ajax call
 		
 	}
 	
 };
-
-	// Event listeners
-	searchField.addEventListener("keyup", addr.search, false);
+	$("#search-form").bind('keyup', addr.search);
 	
-	//getAllButton.addEventListener("click", addr.getAllContacts, false);
-	
-})(); // End anonymous function
+}); // End document.ready
