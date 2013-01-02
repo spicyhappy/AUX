@@ -22,7 +22,7 @@ $(document).ready(function () {
 					if(isItFound !== -1) {
 						
 						output.append('<p>' + '<a href="mailto:' + obj.email + '">' + obj.name + '</a></p>');
-						
+						 
 					}
 					
 				}); // End each
