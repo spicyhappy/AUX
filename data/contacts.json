@@ -2,32 +2,43 @@
 	"addressBook" : [
 		{
 			"name": "Hayao Miyazaki",
-			"email": "post@ghibli.co.jp"
+			"email": "post@ghibli.co.jp",
+			"website": "http://www.ghibli.jp/"
 		},
 		
 		{
 			"name": "Chris Milk",
-			"email": "mail2@chrismilk.com"
+			"email": "mail2@chrismilk.com",
+			"website": "chrismilk.com"
 		},
 		
 		{
 			"name": "Michael Dudok de Wit",
-			"email": "m@dudokdewit.co.uk"	
+			"email": "m@dudokdewit.co.uk",
+			"website": "http://www.dudokdewit.co.uk/"
 		},
 		
 		{
 			"name": "Jenova Chen",
-			"email": "jenovachen@gmail.com"	
+			"email": "jenovachen@gmail.com",
+			"website": "http://www.jenovachen.com/"
 		},
 		
 		{
 			"name": "Cyriak Harris",
-			"email": "info@cyriak.co.uk"
+			"email": "info@cyriak.co.uk",
+			"website": "http://www.cyriak.co.uk/"
 		},
 		
 		{
 			"name": "Mom",
 			"email": "mom@always.com"
+		},
+		
+		{
+			"name": "Dan Sousa",
+			"email": "contact@danielsousa.com",
+			"website": "http://danielsousa.com"
 		}
 	]
 }
