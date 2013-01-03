@@ -10,6 +10,10 @@
 		
 		var options = $.extend(defaults,options);
 		
+		if(Mustache) {
+			console.log("exists");
+		}
+		
 		var addr = {
 	
 			search : function(event){
@@ -27,10 +31,14 @@
 					$.map(addrBook, function(obj,i) {
 					
 						var isItFound = obj.name.indexOf(searchValue);
-	
-						if(isItFound !== -1) {
+						var template = $('#addressBookTemplate').html();
 						
-							$(options.output).append('<p>' + '<a href="mailto:' + obj.email + '">' + obj.name + '</a></p>');
+						if(isItFound !== -1) {
+							
+							$(options.output).append(Mustache.to_html(template,obj));
+							
+							
+							// $(options.output).append('<p>' + '<a href="mailto:' + obj.email + '">' + obj.name + '</a></p>');
 						 
 						}
 						
