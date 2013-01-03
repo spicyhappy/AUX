@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    $('#output').addressBook({url: 'data/contacts.json', query : '#q'});
+    $('').addressBook({url: 'data/contacts.json', query : '#q', output: '#output'});
 
 	
 }); // Close document.ready
