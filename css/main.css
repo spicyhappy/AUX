@@ -1,0 +1,40 @@
+body, p, div, header, footer {
+	margin: 0;
+	font-family: helvetica, sans-serif;
+	font-size: 1em;
+}
+
+body {
+	background-color: black;
+	color: white;
+	margin: 2%;
+}
+
+h1 {
+	text-align: center;
+}
+
+footer {
+	margin: 20px 0;
+	text-align: center;
+}
+
+#wrapper {
+	width: 900px;
+	margin: auto;
+}
+
+#content {
+	background-color: #287199;
+}
+
+#content>form {
+	padding: 30px;
+	background-color: #29ABE2;
+}
+
+#github {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
