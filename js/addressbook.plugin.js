@@ -2,20 +2,13 @@
 	
 	$.fn.addressBook = function(options) {
 		
-		var defaults = {
+		var defaults = $.extend({
 			output: '#output',
 			url: 'data/contacts.json',
-			query: '#q',
-		};
-		
-		var options = $.extend(defaults,options);
-		
-		if(Mustache) {
-			console.log("exists");
-		}
+			query: '#q'
+		}, options);
 		
 		var addr = {
-	
 			search : function(event){
 		
 				$.getJSON(options.url, function(data) {
@@ -30,16 +23,11 @@
 				
 					$.map(addrBook, function(obj,i) {
 					
-						var isItFound = obj.name.indexOf(searchValue);
 						var template = $('#addressBookTemplate').html();
+						var isItFound= obj.name.match(new RegExp(searchValue,"i"));
 						
-						if(isItFound !== -1) {
-							
+						if (isItFound) {
 							$(options.output).append(Mustache.to_html(template,obj));
-							
-							
-							// $(options.output).append('<p>' + '<a href="mailto:' + obj.email + '">' + obj.name + '</a></p>');
-						 
 						}
 						
 					}); // End map
@@ -48,7 +36,7 @@
 		
 				}); // End Ajax call
 		
-			} // End search
+			}, // End search
 		}; // End addr object
 		
 		$(options.query).bind('keyup', addr.search);
