@@ -29,8 +29,14 @@ footer {
 }
 
 #content>form {
-	padding: 30px;
+	padding: 25px;
 	background-color: #29ABE2;
+}
+
+#content input {
+	-webkit-appearance: none;
+	width: 100%;
+	height: 30px;
 }
 
 #github {
