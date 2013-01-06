@@ -14,9 +14,11 @@
 	<div id="content">
 		<form action="" method="get" id="search-form">
 			<!-- <label for="q">Search</label> -->
-			<input type="search" id="q" name="q" required placeholder="Search by name" autofocus="autofocus">			
+			<input type="search" id="q" name="q" required placeholder="Search by name" autofocus="autofocus">
+			<button id="viewAll" type="button" value="View All">View All</button>
 		</form>
-		<div id="output" aria-atomic="true" aria-live="polite" aria-relevant="additions removals"></div><!--/#outout-->
+		<div id="output" aria-atomic="true" aria-live="polite" aria-relevant="additions removals"></div>
+		<div id="footbar"></div>
 	</div>
 	<footer>
 		<p><a href="http://www.xin-squared.com">made by xin xin with&nbsp;&nbsp;<img src="images/heart.gif" alt="love"></a></p>
@@ -29,7 +31,6 @@
 
 <script src="js/jquery.js"></script>
 <script src="js/mustache.js"></script>
-
 <!--
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.0/mustache.min.js"></script>
