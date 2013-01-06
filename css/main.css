@@ -58,21 +58,46 @@ footer a {
 #content {
 	color: black;
 	background-color: #287199;
+	-moz-box-shadow: 2px 2px 15px black;
+	-webkit-box-shadow: 2px 2px 15px black;
+	box-shadow: 2px 2px 15px black;
 }
 
 #content form {
 	padding: 25px;
+	height: 45px;
 	background-color: #29ABE2;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#66ccff), color-stop(100%,#29abe2)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #66ccff 0%,#29abe2 100%); /* Chrome10+,Safari5.1+ */
+	background: linear-gradient(to bottom, #66ccff 0%,#29abe2 100%);
+	border-bottom: 3px solid #335B72;
 }
 
 #content input {
 	-webkit-appearance: none;
-	border-radius: 20px;
+	border-radius: 30px;
 	border: 2px solid #B3B3B3;
-	width: 100%;
+	width: 85%;
 	height: 30px;
 	font-size: 1em;
 	padding: 20px;
+}
+
+#content button {
+	float: right;
+	margin: 0;
+	font-size: 1em;
+	border-radius: 30px;
+	padding: 12px 20px;
+	background-color: #FFDD4D;
+	border: 2px solid #D1B354;
+	vertical-align: middle;
+}
+
+#content button:hover {
+	background-color: #F15A24;
+	border-color: #D8491D;
+	color: white;
 }
 
 #content input[placeholder] {
@@ -96,7 +121,6 @@ footer a {
 #output a {
 	color:black;
 }
-
 
 .entry {
 	margin-left: 25px;
@@ -122,8 +146,16 @@ footer a {
 	background-color: #E6E6E6;
 }
 
+.img:hover {
+	opacity: .8;
+}
+
 .entry:hover {
 	background-color: #FFE5B8;
+}
+
+.entry:first-child {
+	
 }
 
 .entry:last-child {
@@ -133,6 +165,12 @@ footer a {
 .entry-detail {
 	font-weight: 400;
 	float: right;
+}
+
+#footbar {
+	padding-bottom: 25px;
+	background: #29ABE2;
+	border-top: 3px solid #5EC2E5;
 }
 
 #github {
