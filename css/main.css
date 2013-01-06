@@ -1,6 +1,20 @@
-body, p, div, header, footer {
+@font-face {
+	font-family:"Proxima Nova";
+	src:url(../fonts/ProximaNova-Light.ttf);
+	font-weight:400;
+}
+
+@font-face {
+	font-family:"Proxima Nova";
+	src:url(../fonts/ProximaNova-Semibold.ttf);
+	font-weight:600;
+}
+
+
+body, p, div, header, footer, input {
 	margin: 0;
-	font-family: helvetica, sans-serif;
+	padding: 0;
+	font-family: "Proxima Nova",helvetica, sans-serif;
 	font-size: 1em;
 }
 
@@ -11,12 +25,20 @@ body {
 }
 
 h1 {
+	margin: 40px 0;
+	font-size: 2em;
+	font-weight: 400;
 	text-align: center;
 }
 
 footer {
-	margin: 20px 0;
+	margin: 80px 0;
 	text-align: center;
+}
+
+a {
+	font-weight: 600;
+	text-decoration: none;
 }
 
 #wrapper {
@@ -25,18 +47,68 @@ footer {
 }
 
 #content {
+	color: black;
 	background-color: #287199;
 }
 
-#content>form {
+#content form {
 	padding: 25px;
 	background-color: #29ABE2;
 }
 
 #content input {
 	-webkit-appearance: none;
+	border-radius: 20px;
+	border: 2px solid #B3B3B3;
 	width: 100%;
 	height: 30px;
+	font-size: 1em;
+	padding: 20px;
+}
+
+#content input[placeholder] {
+	font-family: "Proxima Nova", helvetica, san-serif;
+	font-weight: 400;
+}
+
+#content input:focus {
+	-moz-box-shadow: 0 0 5px 3px #2190AA;
+	-webkit-box-shadow: 0 0 5px 3px #2190AA;
+	box-shadow: 0 0 5px 3px #2190AA;
+	outline: none;
+}
+
+#output {
+	padding: 25px;
+}
+
+#output a {
+	display: block;
+}
+
+.entry {
+	width: inherit;
+	padding: 25px;
+	vertical-align: middle;
+	background-color: white;
+	border-top: 2px solid #E6E6E6;
+	border-left: 2px solid #E6E6E6;
+	border-right: 2px solid #E6E6E6;
+	font-size: 1.15em;
+	color: black;
+}
+
+.entry:hover {
+	background-color: #FFE5B8;
+}
+
+a:last-child .entry {
+	border-bottom: 2px solid #E6E6E6;
+}
+
+.entry-detail {
+	font-weight: 400;
+	float: right;
 }
 
 #github {
