@@ -18,8 +18,13 @@ body, p, div, header, footer, input {
 	font-size: 1em;
 }
 
+a {
+	font-weight: 600;
+	text-decoration: none;
+}
+
 body {
-	background-color: black;
+	background: black url('../images/backgroundEscher.jpg');
 	color: white;
 	margin: 2%;
 }
@@ -36,10 +41,14 @@ footer {
 	text-align: center;
 }
 
-a {
-	font-weight: 600;
-	text-decoration: none;
+
+footer a {
+	font-weight: 400;
+	color: #CCCCCC;
+	border-bottom: 1px #CCCCCC dotted;
 }
+
+
 
 #wrapper {
 	width: 900px;
@@ -79,14 +88,19 @@ a {
 }
 
 #output {
-	padding: 25px;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	background: #287199 url('../images/backgroundStripes.jpg');
 }
 
 #output a {
-	display: block;
+	color:black;
 }
 
+
 .entry {
+	margin-left: 25px;
+	margin-right: 25px;
 	width: inherit;
 	padding: 25px;
 	vertical-align: middle;
@@ -98,11 +112,21 @@ a {
 	color: black;
 }
 
+.img {
+	position: relative;
+	float: left;
+	left: -25px;
+	top: -25px;
+	width: 68px;
+	height: 68px;
+	background-color: #E6E6E6;
+}
+
 .entry:hover {
 	background-color: #FFE5B8;
 }
 
-a:last-child .entry {
+.entry:last-child {
 	border-bottom: 2px solid #E6E6E6;
 }
 

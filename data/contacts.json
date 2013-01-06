@@ -1,44 +1,53 @@
 {
 	"addressBook" : [
-		{
-			"name": "Hayao Miyazaki",
-			"email": "post@ghibli.co.jp",
-			"website": "http://www.ghibli.jp/"
-		},
 		
 		{
 			"name": "Chris Milk",
 			"email": "mail2@chrismilk.com",
-			"website": "chrismilk.com"
-		},
-		
-		{
-			"name": "Michael Dudok de Wit",
-			"email": "m@dudokdewit.co.uk",
-			"website": "http://www.dudokdewit.co.uk/"
-		},
-		
-		{
-			"name": "Jenova Chen",
-			"email": "jenovachen@gmail.com",
-			"website": "http://www.jenovachen.com/"
+			"website": "chrismilk.com",
+			"image": "images/ChrisMilk.jpg"
 		},
 		
 		{
 			"name": "Cyriak Harris",
 			"email": "info@cyriak.co.uk",
-			"website": "http://www.cyriak.co.uk/"
-		},
-		
-		{
-			"name": "Mom",
-			"email": "mom@always.com"
+			"website": "http://www.cyriak.co.uk/",
+			"image": "images/CyriakHarris.jpg"
 		},
 		
 		{
 			"name": "Dan Sousa",
 			"email": "contact@danielsousa.com",
-			"website": "http://danielsousa.com"
+			"website": "http://danielsousa.com",
+			"image": "images/DanSousa.jpg"
+		},
+		
+		{
+			"name": "Hayao Miyazaki",
+			"email": "post@ghibli.co.jp",
+			"website": "http://www.ghibli.jp/",
+			"image": "images/HayaoMiyazaki.jpg"
+		},
+		
+		{
+			"name": "Jenova Chen",
+			"email": "jenovachen@gmail.com",
+			"website": "http://www.jenovachen.com/",
+			"image": "images/JenovaChen.jpg"
+		},
+		
+		{
+			"name": "Michael Dudok de Wit",
+			"email": "m@dudokdewit.co.uk",
+			"website": "http://www.dudokdewit.co.uk/",
+			"image": "images/MichaelDudokdeWit.jpg"
+		},
+				
+		{
+			"name": "Xin Xin",
+			"email": "xin@xin-squared.com",
+			"website": "http://www.xin-squared.com",
+			"image": "images/XinXin.jpg"
 		}
 	]
 }
