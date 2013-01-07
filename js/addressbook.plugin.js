@@ -31,7 +31,12 @@
 							$(options.output).append(Mustache.to_html(template,obj));
 						}
 						
+						
 					}); // End map
+					
+					if ($(output).html() === "") {
+						$(options.output).append('<p class="noresult">No results. Please search again.</p>');
+					}
 				
 				} // End count
 		
